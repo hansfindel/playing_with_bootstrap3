@@ -1,0 +1,52 @@
+#home-carousel.carousel.slide
+	// indicators 
+	%ol.carousel-indicators
+		%li.active{data:{target: "#home-carousel", "slide-to"=> 0}}
+		%li{data:{target: "#home-carousel", "slide-to"=> 1}}
+		%li{data:{target: "#home-carousel", "slide-to"=> 2}}
+		%li{data:{target: "#home-carousel", "slide-to"=> 3}}
+		%li{data:{target: "#home-carousel", "slide-to"=> 4}}
+		%li{data:{target: "#home-carousel", "slide-to"=> 5}}
+
+	/ Wrapper for slides
+
+	.carousel-inner
+		.item.active
+			%img{src:"/assets/carousel_home/venta.jpg", alt:"TopVision:Ventas"}
+			.carousel-caption
+				Ventas...
+		.item
+			%img{src:"/assets/carousel_home/talk.jpg", alt:"TopVision:Talks"}
+			.carousel-caption
+				Talk
+		.item
+			%img{src:"/assets/carousel_home/tdlc.jpg", alt:"TopVision"}
+			.carousel-caption
+				Tratado de libre comercio... 
+		.item
+			%img{src:"/assets/carousel_home/tu_decides.jpg", alt:"TopVision"}
+			.carousel-caption
+				tu decides
+		.item
+			%img{src:"/assets/carousel_home/converse.jpg", alt:"TopVision"}
+			.carousel-caption
+				Converse 
+		.item
+			%img{src:"/assets/carousel_home/music.jpg", alt:""}
+			.carousel-caption
+				Music
+	/ Controls
+
+	%a.left.carousel-control{href:"#home-carousel",  data: {slide: "prev"}}
+		%span.icon-prev 
+	%a.right.carousel-control{href:"#home-carousel", data: {slide: "next"}}
+		%span.icon-next 
+
+:javascript
+	$(document).ready(function(){
+		$('.carousel').carousel({interval: 2000})
+	});
+
+.clear{style:"height: 10px;"}
+
+= render "more"

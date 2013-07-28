@@ -1,0 +1,38 @@
+// change colors
+// $link-color: red;
+$navbar-bg: #111;
+$border-radius-base: 0px;
+
+// nav-bar > li > a
+$navbar-link-color: white;
+$navbar-link-active-color: grey;
+
+
+@import "bootstrap";
+@import "bootstrap_extension";
+@import "home";
+
+body{
+	background: url("background.png");
+}
+.clear{
+	clear:both;
+}
+.content{
+	max-width: 960px;
+	padding: 0 10px 0 10px;
+	margin: auto;
+}
+footer{
+	margin-top: 15px;
+	padding-top: 15px;
+	min-height: 100px;
+	background-color: $navbar-bg;
+}
+li.nav-link{
+	&.active{
+		a{
+			font-weight: bold;
+		}
+	}
+}

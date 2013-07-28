@@ -1,0 +1,10 @@
+// ----- BUTTONS
+
+$btn-dark-color:              #fff !default;
+$btn-dark-bg:                 #123b5a !default;
+$btn-dark-border:             $btn-dark-bg !default;
+
+// Warning appears as orange
+.btn-dark {
+  @include btn-pseudo-states($btn-dark-color, $btn-dark-bg, $btn-dark-border);
+}
