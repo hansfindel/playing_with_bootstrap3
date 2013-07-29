@@ -21,24 +21,27 @@
 
 		%header.navbar
 			%section.title.brand.left-with-margin
-				= link_to "TopVision",root_path, class: "navbar-brand" 
+				= link_to "TopVision",root_path, class: "navbar-brand brand-title" 
 			%nav.nav-collapse.collapse.navbar-responsive-collapse.rigth-with-margin
 				%ul.nav.navbar-nav
 					%li.nav-link.active
-						%a{href:"#"}
-							Home
+						= link_to "Nosotros", "/home/work", class: "remote_loader"
 					%li.nav-link
-						%a{href:"#"}
-							Link
+						= link_to "Nuestro trabajo", "/home/work", class: "remote_loader"
 					%li.nav-link
-						%a{href:"#"}
-							Link
+						= link_to "Tecnología", "/home/work", class: "remote_loader"
+					%li.nav-link
+						= link_to "Contacto", "/home/work", class: "remote_loader"
 
-		.content
+		.content.main-content
 			.row
 				= yield
 
 		%footer
 			.content
-				Footer
+				.row
+					.col-12.col-sm-4.col-lg-4
+						%h3.footer_title TOPVISION
+					.col-12.col-sm-4.col-lg-4.vertical-separator
+					.col-12.col-sm-4.col-lg-4
 			= javascript_include_tag "application", "data-turbolinks-track" => true 

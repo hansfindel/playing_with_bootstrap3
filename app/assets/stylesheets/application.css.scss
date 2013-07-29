@@ -11,9 +11,16 @@ $navbar-link-active-color: grey;
 @import "bootstrap";
 @import "bootstrap_extension";
 @import "home";
+@import "footer";
 
 body{
 	background: url("background.png");
+}
+.separator{
+	border-top: 2px dashed #aaa;
+	width: 100%;
+	margin-top:30px;
+	clear: both;
 }
 .clear{
 	clear:both;
@@ -36,3 +43,55 @@ li.nav-link{
 		}
 	}
 }
+
+.brand-title{
+	font-size: 40px;
+}
+
+.product_zone{
+
+	background: rgba(16,16,90,0.5);
+	color: white;
+	border-radius: 5px;
+	.picture_zone{
+		padding: 10px 20px 0 20px;
+		img{
+			width: 180px;
+			border: #f0f0f0 solid 1px
+		}
+		z-index: 2;
+	}
+	.product_info{
+		z-index: 2;
+		margin: 1px 5px 0 5px;
+		padding: 5px;
+		.title_zone{
+			text-align: center;
+			h2, h3{ margin-top: 5px;}
+		}
+		.description{
+			p{
+				text-align: justify;
+			}
+		}
+	}
+}
+
+
+
+.vertical-separator{
+  min-height: 100px;
+  @media (min-width: $screen-small) {
+    border-right: 0px dashed #aaa;
+    border-left: 0px dashed #aaa;
+  }
+  @media (min-width: $screen-medium) {
+    border-right: 2px dashed #aaa;
+    border-left: 2px dashed #aaa;
+  }
+  @media (min-width: $screen-large) {
+    border-right: 2px dashed #aaa;
+    border-left: 2px dashed #aaa;
+  }
+}
+
