@@ -25,7 +25,7 @@
 			%nav.nav-collapse.collapse.navbar-responsive-collapse.rigth-with-margin
 				%ul.nav.navbar-nav
 					%li.nav-link.active
-						= link_to "Nosotros", "/home/work", class: "remote_loader"
+						= link_to "Nosotros", "/home/nosotros", class: "remote_loader"
 					%li.nav-link
 						= link_to "Nuestro trabajo", "/home/work", class: "remote_loader"
 					%li.nav-link
@@ -34,6 +34,11 @@
 						= link_to "Contacto", "/home/work", class: "remote_loader"
 
 		.content.main-content
+			.row
+				- if flash.any?
+					- flash.each do |name, msg|
+						- if !msg.blank? && !name.blank?
+							%p{id: "alert-#{name}"}= msg
 			.row
 				= yield
 

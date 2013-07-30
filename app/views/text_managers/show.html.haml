@@ -1,0 +1,11 @@
+
+%p
+  %b Name:
+  = @text_manager.name
+%p
+  %b Description:
+  = @text_manager.description
+
+= link_to 'Edit', edit_text_manager_path(@text_manager)
+\|
+= link_to 'Back', text_managers_path

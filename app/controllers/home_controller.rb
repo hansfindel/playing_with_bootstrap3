@@ -7,4 +7,7 @@ class HomeController < ApplicationController
   		f.js
   	end
   end
+  def us
+
+  end
 end

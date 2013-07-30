@@ -1,0 +1,19 @@
+%h1 Listing text_managers
+
+%table.table.table-hover
+  %tr
+    %th Name
+    %th Description
+    %th
+    %th
+
+  - @text_managers.each do |text_manager|
+    %tr
+      %td= text_manager.name
+      %td= simple_format text_manager.description
+      %td= link_to 'Edit', edit_text_manager_path(text_manager)
+      / %td- link_to 'Destroy', text_manager, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Text manager', new_text_manager_path

@@ -1,0 +1,20 @@
+= form_for @text_manager, class: "form-horizontal" do |f|
+  - if @text_manager.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@text_manager.errors.count, "error")} prohibited this text_manager from being saved:"
+      %ul
+        - @text_manager.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field.form-group
+    = f.label :name, "Nombre",  class:"col-lg-2 col-sm-2 control-label"
+    .col-lg-10.col-sm-2
+      = f.text_field :name, class: "form-control", placeholder: "Nombre"
+    
+  .field.form-group
+    = f.label :description, "Contenido", class:"col-lg-2 col-sm-2 control-label"
+    .col-lg-10.col-sm-10
+      = f.text_area :description, class: "form-control", rows: "15", placeholder: "Contenido"
+  .field.form-group
+    .actions.text-manager-submit.col-lg-10.col-sm-10.col-offset-2
+      = f.submit 'Save', class: "btn btn-default"
