@@ -1,0 +1,15 @@
+%h1 Galería
+
+.gallery
+  - @galleries.each do |gallery|
+    .image    
+      = link_to (image_tag gallery.image_url, alt: gallery.location), gallery
+      .links      
+        .left 
+          = link_to 'Edit', edit_gallery_path(gallery)
+        .left
+          = link_to 'Destroy', gallery, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Gallery', new_gallery_path

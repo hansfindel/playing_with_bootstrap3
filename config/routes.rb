@@ -1,10 +1,13 @@
 Topvision::Application.routes.draw do
+  resources :galleries
+
   resources :text_managers
 
   root "home#index"
   get "home/index"
-  get "home/work" => "home#work", as: "work_home_path"
-  get "home/nosotros" => "home#us", as: "us_home_path"
+  get "home/work" => "home#work", as: "work_home"
+  get "home/nosotros" => "home#us", as: "us_home"
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

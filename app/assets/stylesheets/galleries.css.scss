@@ -1,0 +1,44 @@
+/*
+.alpha60 {
+// Fallback for web browsers that doesn't support RGBa 
+background: rgb(0, 0, 0) transparent;
+// RGBa with 0.6 opacity 
+background: rgba(0, 0, 0, 0.6);
+// For IE 5.5 - 7 
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+// For IE 8 
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+*/
+.gallery{
+	.image{
+		width: 220px;
+		display: inline-block;
+		margin: 5px;
+		padding: 10px;
+		border-radius: 5px;
+		background: rgba(10,10,10,.8);
+		img{
+			max-width: 200px;
+			margin: auto;
+		}
+		.links{
+			div{
+				display: inline;
+				margin-left: 40px;
+				margin-top: 5px;
+			}
+			.left{
+				float: left;
+			}
+			.right{
+				float: right;
+			}
+		}
+	}	
+}
+.image-content{
+	img{
+		max-width: 960px;
+	}
+}
