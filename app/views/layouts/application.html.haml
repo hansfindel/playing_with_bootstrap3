@@ -38,7 +38,10 @@
 				- if flash.any?
 					- flash.each do |name, msg|
 						- if !msg.blank? && !name.blank?
-							%p{id: "alert-#{name}"}= msg
+							.alert.fade.in
+								= link_to "X", "#", class: "close", data: { dismiss:"alert" }
+								%p{id: "alert-#{name}"}= msg
+
 			.row
 				= yield
 
