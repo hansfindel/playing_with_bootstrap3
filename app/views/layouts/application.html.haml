@@ -24,14 +24,11 @@
 				= link_to "TopVision",root_path, class: "navbar-brand brand-title" 
 			%nav.nav-collapse.collapse.navbar-responsive-collapse.rigth-with-margin
 				%ul.nav.navbar-nav
-					%li.nav-link{class: isCurrentPath(us_home_path)}
-						= link_to "Nosotros", us_home_path, class: "remote_loader"
-					%li.nav-link{class: isCurrentPath(galleries_path)}
-						= link_to "Nuestro trabajo", galleries_path, class: "remote_loader"
-					%li.nav-link{class: isCurrentPath(work_home_path)}
-						= link_to "Tecnología", work_home_path, class: "remote_loader"
-					%li.nav-link{class: isCurrentPath("x")}
-						= link_to "Contacto", "/home/work", class: "remote_loader"
+					= navigation_link("Nosotros", us_home_path)
+					= navigation_link("Nuestro trabajo", galleries_path)
+					= navigation_link("Tecnología", work_home_path)
+					= navigation_link("Contacto", "/home/work")
+
 
 		.content.main-content
 			.row
