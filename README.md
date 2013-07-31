@@ -2,5 +2,6 @@ top_vision
 ==========
 
 ##TO DO 
-- Modal for showing the images
 - Products
+- CSS for product pages such as tv
+- Radical new gallery for products - idea:: pager at the side

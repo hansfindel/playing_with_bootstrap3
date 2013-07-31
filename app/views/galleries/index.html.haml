@@ -1,15 +1,41 @@
 %h1 Galería
 
 .gallery
-  - @galleries.each do |gallery|
+  - @galleries.each_with_index do |gallery, i|
     .image    
-      = link_to (image_tag gallery.image_url, alt: gallery.location), gallery
+      = link_to (image_tag gallery.image_url, alt: gallery.location), "#gallery_modal", data:{toggle:"modal", url: "#{gallery.image_url}", index: i}, class: "image_#{i}"
       .links      
         .left 
           = link_to 'Edit', edit_gallery_path(gallery)
         .left
           = link_to 'Destroy', gallery, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.gallery_count
 
 %br
 
 = link_to 'New Gallery', new_gallery_path
+
+.modal#gallery_modal
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{type: "button", data:{dismiss:"modal"}, aria:{hidden:"true"}}
+          &times;
+        %h4.modal-title
+          Galería
+      .modal-body        
+
+        #gallery-carousel
+          .carousel-inner
+            .item.active
+              %img{src: "", alt:"TopVision"}
+              .carousel-caption
+                TopVision
+          
+          %a.left.carousel-control{href:"#gallery-modal",  data: {target: "prev"}}
+            %span.icon-prev 
+          %a.right.carousel-control{href:"#gallery-carousel", data: {target: "next"}}
+            %span.icon-next 
+
+      .modal-footer
+        %a.btn.close{href:"#", data:{dismiss:"modal"}} Close
